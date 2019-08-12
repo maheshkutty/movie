@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            body{
+                font-size: 10px;
+                background-color: skyblue;
+                color: white;    
+            }
+            h1{
+                background-color: black;
+                text-align: center;
+            }
+        </style>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+        <script src="/assets/front_movie.js"></script>
+    </head>
+    
+    <body>
+        <h1 >Movie Review Page</h1>
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-6 offset-sm-3">
+                    <form method="POST" action="/movie" enctype="multipart/form-data">
+                        <% if (message !='none') { %>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <p><%= message %></p>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                       <% } %>
+                        <div class="form-group row">
+                            <label for="mname" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-8 ">
+                            <input type="text" class="form-control form-control-sm" name="name" placeholder="movie name" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="m_img" class="col-sm-2 col-form-label">Image</label>
+                            <div class="col-sm-8 ">
+                                <input type="file" name="m_img" id="movie_img" class="form-control-file form-control-sm" required>
+                                <span id="img_error" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="summary" class="col-sm-2 col-form-label">Summary</label>
+                            <div class="col-sm-8 ">
+                                <textarea cols="50" rows="10" class="form-control form-control-sm" placeholder="give short detail about movie" name="summary" required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary offset-sm-2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+       <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

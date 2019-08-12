@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie Detail</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            h1
+            {
+                text-align: center;
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Movie Detail</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-primary"><%= movie[0].name %></h2>
+                    <div class="d-flex">
+                        <img src="<%= movie[0].img %>" class="col-6 pl-0" height="300px" width="300px">
+                        <p class="ml-1">Description:<br><%= movie[0].summary %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
